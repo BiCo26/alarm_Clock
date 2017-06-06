@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+<head>
+	<title>Javascript Alarm Clock</title>
+
+	<style>
+		body {
+				background: url("AlarmClock.jpg");
+				background-size: cover;
+				font-family: 'Press Start 2P', cursive;
+				font-size: 25px;
+				margin-top: 200px;
+		}
+
+		#alarmclock {
+
+			border-radius: 180px 180px 180px 180px;
+			background: black;
+			margin-top: 215px;
+			margin-left: 520px;
+			height: 400px;
+			width: 400px;
+			color: white;
+			text-align: center;
+		}
+	</style>
+
+</head>
+
+<body>
+
+
+<div id="alarmclock"></div>
+
+    <script type="text/javascript">
+
+        function DisplayTime(){
+
+            var time = new Date();
+            var h = time.getHours();
+            var m = time.getMinutes();
+            var s = time.getSeconds();        
+        
+            if(h == 0){
+                h = 12;
+            }
+            if(h > 12){
+                h = h - 12;
+            }
+            if(h < 10){
+                h = "0" + h;
+            }
+            if(m < 10){
+                m = "0" + m;
+            }
+            if(s < 10)
+
+        var time = h + ":" + m + ":" + s;
+
+        document.getElementById("alarmclock").innerHTML = time;
+    }
+
+        setInterval(DisplayTime, 1000); 
+
+        DisplayTime(); 
+
+    </script>
+
+
+</body>
+
+</html>
